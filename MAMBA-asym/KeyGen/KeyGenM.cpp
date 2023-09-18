@@ -2180,11 +2180,11 @@ void KeyGenM::a_Input_self(vector<gfp> &in, vector<gfp> &out, vector<gfp> &mac_o
         {
           if (i == 0)
             {
-              mac_x0+= t[i];
+              mac_x0= t[i];
             }
           else
             {
-              mac_out[i - 1]+= t[i];
+              mac_out[i - 1]= t[i];
             }
         }
     }
