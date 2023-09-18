@@ -2205,11 +2205,6 @@ void KeyGenM::a_Input_self(vector<gfp> &in, vector<gfp> &out, vector<gfp> &mac_o
         {
           r[i].randomize(G2);
         }
-
-        for (unsigned i = 0; i < nbElements; i++)
-      {
-        cout <<"r[" << i <<"]= " <<  r[i] << endl;
-      }
       
       // 7 - compute and broadcast y
       gfp y;
@@ -2379,10 +2374,6 @@ void KeyGenM::a_Input_other(int nbP_Input, vector<gfp> &out, vector<gfp> &mac_ou
         {
           r[i].randomize(G2);
         }  
-      for (unsigned i = 0; i < nbElements; i++)
-      {
-        cout <<"r[" << i <<"]= " <<  r[i] << endl;
-      }
       
       // 7 - receive y
       gfp y;
@@ -2390,7 +2381,7 @@ void KeyGenM::a_Input_other(int nbP_Input, vector<gfp> &out, vector<gfp> &mac_ou
       P.receive_from_player(nbP_Input, ss2, 1);
       istringstream is1(ss2);
       y.input(is1, false);
-      cout << "y = " << endl;
+
       // 8 - compute m
       gfp m;
       m= r[0] * mac_x0;
