@@ -2424,13 +2424,8 @@ void KeyGenM::MacCheck(gfp y, gfp m, bigint p, MASCOTTriples &mt)
   gfp check;
 
   sigma.resize(P.nplayers());
-  cout << "m= " << m << endl;
-  cout << "y= " << y << endl;
   sigma[P.whoami()]= m - (y * mt.Delta);
-  cout << mt.Delta << ";" << m-(y * mt.Delta) << endl;
-  cout << "sigma " << sigma[0]  << " " << sigma[1] << endl;
   Commit_And_Open(sigma, P, true, 1);
-  cout << "sigma " << sigma[0]  << " " << sigma[1] << endl;
 
   check.assign(0);
 
